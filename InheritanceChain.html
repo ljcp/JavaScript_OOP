@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//4. Inheritance with Prototype  Chain
+
+Object.prototype.inObj = 1;
+ 
+function A()
+{
+    this.inA = 2;
+}
+ 
+A.prototype.inAProto = 3;
+ 
+B.prototype = new A;            // Hook up A into B's prototype chain Here's where the inheritance occurs 
+B.prototype.constructor = B;  // Otherwise instances of B would have a constructor of A 
+function B()
+{
+    this.inB = 4;
+}
+ 
+B.prototype.inBProto = 5;
+ 
+x = new B;
+document.write(x.inObj + ', ' + x.inA + ', ' + x.inAProto + ', ' + x.inB + ', ' + x.inBProto);
+
+</script>
+
+</body>
+</html>
