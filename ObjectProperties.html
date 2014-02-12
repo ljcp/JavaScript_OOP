@@ -28,6 +28,11 @@ delete obj.color;
 debugger;
 
 
+console.log(JSON.stringify(
+  Object.getOwnPropertyDescriptor( obj, "color" )
+));
+
+
 
 
 </script>
