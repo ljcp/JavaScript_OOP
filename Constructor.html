@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//5. Constructor
+function employee(name,jobtitle,born)
+{
+	this.name=name;
+	this.jobtitle=jobtitle;
+	this.born=born;
+}
+
+var fred=new employee("Fred","Caveman",1970);
+
+document.write(fred.constructor);
+
+</script>
+
+</body>
+</html>
