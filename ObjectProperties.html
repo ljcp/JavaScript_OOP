@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//Object Properties
+
+var obj = {};
+ 
+Object.defineProperty( obj, "color", {
+  value: "azul",
+  writable: false,
+  enumerable: true,
+  configurable: false
+});
+
+
+obj.color = "rojo" 
+
+debugger;
+
+for ( var prop in obj ) {
+  console.log("property:" + prop );
+}
+
+delete obj.color;
+
+debugger;
+
+
+
+
+</script>
+
+</body>
+</html>
