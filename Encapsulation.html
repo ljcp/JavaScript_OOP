@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+/**
+* A Introduction to Javascript OOP 
+* Written by Luis Castillo
+* For Alivebox www.alivebox.com
+*/
+
+var Figura = function (c, stroke) {
+    // Variable privada
+    var _color = c;
+    // Variable publica
+    this.stroke = null;
+    // Necesario para poder acceder
+    // a this desde los mteodos privados
+    var self = this;
+    // Mtodo privado
+    var _setup = function(s) {
+        // acceder a metodos publicos
+        // a traves de self. Y a los privados directamente
+        self.stroke = s;
+    };
+    _setup(stroke);
+    // Metodos pblicos
+    this.draw = function() {
+        console.log("Figura::draw in color " + _color  + " and stroke " + this.stroke );
+    };
+    this.getColor = function() {
+        return _color;
+    };
+};
+ 
+ 
+var f = new Figura("red", "thin");
+console.log(f._color); // undefined
+console.log(f.getColor()); // red
+console.log(f.stroke); // thin
+//f._setup("thick");  // Error: Object has no method _setup
+ 
+var f2 = new Figura("blue","thick");
+console.log(f2._color); // undefined
+console.log(f2.getColor()); // blue
+console.log(f2.stroke); // thick
+//f._setup("thick");  // Error: Object has no method _setup
+f.draw();
+f2.draw();
+
+</script>
+
+</body>
+</html>
